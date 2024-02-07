@@ -1,0 +1,23 @@
+//First Part 
+var checkboxes = document.getElementsByClassName('sub-checkbox');
+var fieldNames = [];
+for (var i = 0; i < checkboxes.length; i++) {
+  if(checkboxes[i].checked){
+    var fieldName = checkboxes[i].parentElement.nextElementSibling.textContent;
+    fieldNames.push(fieldName);
+  }
+}
+fieldNames 
+ 
+ 
+--
+//Second Part
+ 
+var fieldNames = []; <Paste the Array here which you get from the first part>
+var checkboxes = document.querySelectorAll('input.sub-checkbox');
+checkboxes.forEach(function(checkbox) {
+    var currentFieldName = checkbox.parentElement.nextElementSibling.textContent;
+    if (fieldNames.includes(currentFieldName)) {
+        checkbox.click();
+    }
+});
